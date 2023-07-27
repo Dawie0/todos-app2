@@ -43,7 +43,7 @@ const MainWindow = () => {
   const handleEditTodo = async () => {
     try {
       if (inputValue.trim() !== '') {
-        await axios.put(`https://vercel-test-again-amber.vercel.app/todos${editTodoID}`, { todo: inputValue.trim() })
+        await axios.put(`https://vercel-test-again-amber.vercel.app/todos/${editTodoID}`, { todo: inputValue.trim() })
         setInputValue('')
         fetchTodos()
       }
