@@ -34,7 +34,7 @@ const Register = ({ handleRegister }) => {
                 return
             }
 
-            const response = await axios.post(`/users/register`, {
+            const response = await axios.post(`https://vercel-test-again-amber.vercel.app/users/register`, {
                 user: {
                     username: username,
                     password: password

@@ -13,7 +13,7 @@ const MainWindow = () => {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get(`/todos`)
+      const response = await axios.get(`https://vercel-test-again-amber.vercel.app/todos`)
       setTodos(response.data)
     }
     catch (error) {
@@ -24,7 +24,7 @@ const MainWindow = () => {
   const addTodo = async () => {
     try {
       if (inputValue.trim() !== '') {
-        await axios.post(`/todos`, { todo: inputValue.trim() })
+        await axios.post(`https://vercel-test-again-amber.vercel.app/todos`, { todo: inputValue.trim() })
         setInputValue('')
         fetchTodos()
       }
@@ -43,7 +43,7 @@ const MainWindow = () => {
   const handleEditTodo = async () => {
     try {
       if (inputValue.trim() !== '') {
-        await axios.put(`/todos${editTodoID}`, { todo: inputValue.trim() })
+        await axios.put(`https://vercel-test-again-amber.vercel.app/todos${editTodoID}`, { todo: inputValue.trim() })
         setInputValue('')
         fetchTodos()
       }
@@ -59,7 +59,7 @@ const MainWindow = () => {
 
   const deleteTodo = async (id) => {
     try {
-      await axios.delete(`/todos/${id}`)
+      await axios.delete(`https://vercel-test-again-amber.vercel.app/todos/${id}`)
       fetchTodos()
     }
     catch (error) {
